@@ -17,4 +17,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### This Project is hosted on heroku
 
-Url[https://demo-movie-search.herokuapp.com]
+Open [https://demo-movie-search.herokuapp.com]
