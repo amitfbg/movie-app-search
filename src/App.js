@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Provider } from "react-redux";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import styled from "styled-components";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Shortlisted from "./pages/Shortlisted";
+import store from "./react-redux-store/store";
+
+const Container = styled.div`
+  height: 100vh;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <BrowserRouter basename="/">
+        <Provider store={store}>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/shortlisted">
+              <Shortlisted />
+            </Route>
+            <Redirect to="/" />
+          </Switch>
+          <Footer />
+        </Provider>
+      </BrowserRouter>
+    </Container>
   );
 }
 
