@@ -14,3 +14,7 @@ This command will install all the required dependency
 
 This will runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+### This Project is hosted on heroku
+
+Url[https://demo-movie-search.herokuapp.com]
