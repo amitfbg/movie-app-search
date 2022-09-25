@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "./SearchBox";
 
@@ -13,13 +13,24 @@ const Container = styled.div`
 
 function Footer() {
   const history = useHistory();
+  const location = useLocation();
   const routeChange = (path) => {
     history.push(path);
   };
   return (
     <Container>
-      <Button onClick={() => routeChange("/")}>Home</Button>
-      <Button onClick={() => routeChange("/shortlisted")}>Shortlisted</Button>
+      <Button
+        selected={location?.pathname === "/"}
+        onClick={() => routeChange("/")}
+      >
+        Home
+      </Button>
+      <Button
+        selected={location?.pathname === "/shortlisted"}
+        onClick={() => routeChange("/shortlisted")}
+      >
+        Shortlisted
+      </Button>
     </Container>
   );
 }

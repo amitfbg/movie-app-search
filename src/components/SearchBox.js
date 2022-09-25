@@ -33,7 +33,8 @@ const MyClearIcon = styled(ClearIcon)`
 
 export const Button = styled.div`
   flex-shrink: 0;
-  background-color: rgb(56, 178, 172);
+  background-color: ${({ selected }) =>
+    selected ? "rgb(0,0,255)" : "rgb(56, 178, 172)"};
   font-size: 1rem;
   color: rgb(255, 255, 255);
   border-radius: 0.5rem;
@@ -41,7 +42,8 @@ export const Button = styled.div`
   margin: 0 0.5rem;
   cursor: pointer;
   &:hover {
-    background-color: rgb(44, 122, 123);
+    background-color: ${({ selected }) =>
+      selected ? "rgb(65,105,225)" : "rgb(44, 122, 123)"};
   }
 `;
 
